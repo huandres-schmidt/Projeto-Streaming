@@ -1,0 +1,29 @@
+body {
+    background-color: #2f2f2f;
+    margin: 0;
+}
+
+.navbar-home {
+    width: auto;
+    height: 80px;
+    background-color: red;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 120px;
+    height: auto;
+}
+
+a {
+    color: white;
+}
+
+.botao-finalizar-sessao {
+    margin-left: auto;
+}
