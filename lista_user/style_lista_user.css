@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;   
+}
+
+.container-lista {
+    background-color: #484848;
+    height: 80vh;
+    width: 50%;
+    margin: 30px;
+    border-radius: 25px;
+}
+
+.container-user {
+    background-color: #484848;
+    height: 80vh;
+    width: 50%;
+    margin: 30px;
+    border-radius: 25px;
+}
