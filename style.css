@@ -21,10 +21,14 @@ body {
     height: auto;
 }
 
-a {
+.botao-finalizar-sessao {
+    margin-left: auto;
+}
+
+.nav-link {
     color: white;
 }
 
-.botao-finalizar-sessao {
-    margin-left: auto;
+.navbar-gradient {
+  background: linear-gradient(to right, #8B0000, #FF0000);
 }

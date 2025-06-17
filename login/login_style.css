@@ -37,7 +37,7 @@ body {
     gap: 20px;
 }
 
-#nome-user {
+#email-user {
     width: 80%;
     padding: 10px;
     border: none;
@@ -55,7 +55,7 @@ body {
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
 }
 
-#btn-login {
+button {
     width: 80%;
     padding: 10px;
     background-color: #c62828;

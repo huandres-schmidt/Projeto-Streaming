@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/login/login_style.css">
+    <link rel="stylesheet" href="login_style.css">
     <link rel="stylesheet" href="/style.css">
     <title>Bem Vindo ao melhor do Streaming</title>
 </head>
@@ -11,13 +11,15 @@
    <div class="container-login">
       <img src="../assets/LogoTelaQuente.png" class="logo">
       <form id="form-login">
-        <input type="text" id="nome-user" placeholder="Nome de Usuário">
+        <input type="text" id="email-user" placeholder="Email do Usuário">
         <input type="password" id="password-user" placeholder="Senha de Usuário">
-        <button id="btn-login">Entrar</button>
+        <button type="submit">Entrar</button>
          <a href="../cadastro_user/cadastro.html">Cadastra-se agora clicando aqui</a>
       </form>
    </div>
 
+   <script src="https://cdn.jsdelivr.net/npm/pouchdb@7.3.1/dist/pouchdb.min.js"></script>
+   <script src="../db.js"></script>
    <script src="../login/login.js"></script>
 </body>
 </html>

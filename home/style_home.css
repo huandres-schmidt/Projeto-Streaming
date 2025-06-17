@@ -1,0 +1,47 @@
+.carousel-item {
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-inner img{
+    height: 750px;
+    object-fit: cover;
+}
+
+.filmes-section {
+  padding: 2rem;
+}
+
+.filmes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.filme-card {
+  background-color: #111;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.filme-card:hover {
+  transform: scale(1.05);
+}
+
+.filme-thumb {
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+}
+
+.filme-info {
+  padding: 10px;
+  color: white;
+  text-align: center;
+}
+
+.navbar-gradient {
+  background: linear-gradient(to right, #8B0000, #FF0000);
+}
