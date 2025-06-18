@@ -3,22 +3,9 @@ h1 {
 }
 
 .form {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 20px;
+  padding-top: 20px;
+  padding-left: 20px;
   gap: 20px;
-}
-
-.left-column {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  flex: 1;
-}
-
-.row {
-  display: flex;
-  gap: 10px;
 }
 
 input{
@@ -33,17 +20,12 @@ input{
 }
 
 textarea {
-  flex: 1;
+  width: 50%;
   height: 300px;
   resize: none;
   border-radius: 10px;
-  margin-left: 10px;
   text-align: center;
-}
-
-.logo-right {
-  height: 300px;
-  align-self: center;
+  margin-top: 10px;
 }
 
 .buttons {
