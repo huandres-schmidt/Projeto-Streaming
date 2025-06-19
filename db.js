@@ -45,3 +45,15 @@ async function criarUsuario(usuario) {
     await db.put(novoUsuario);
     alert("Usuário cadastrado com sucesso!");
 }
+
+// Listar Usuarios
+async function listarUsuarios() {
+  try {
+    const res = await db.allDocs({ include_docs: true });
+    const docs = res.rows.map(r => r.doc);
+    return docs.filter(doc => doc.type === 'usuario');
+  } catch (e) {
+    console.error('Erro ao listar usuários:', e);
+    return [];
+  }
+}

@@ -1,23 +1,15 @@
 .container {
     display: flex;
     justify-content: space-between; 
-    align-items: center;   
+    align-items: center;
+    height: 100%;   
 }
 
 .container-lista {
     background-color: #484848;
-    height: 80vh;
-    width: 50%;
+    width: 100%;
     margin: 30px;
-    border-radius: 25px;
-}
-
-.container-user {
-    background-color: #484848;
-    height: 80vh;
-    width: 50%;
-    margin: 30px;
-    border-radius: 25px;
+    border-radius: 15px;
 }
 
 h2 {
