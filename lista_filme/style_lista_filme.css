@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    height: 100%;   
+}
+
+.container-lista {
+    background-color: #484848;
+    width: 100%;
+    margin: 30px;
+    border-radius: 15px;
+}
+
+h2 {
+    text-align: center;
+    color: white;
+}

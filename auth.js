@@ -11,8 +11,10 @@ function ocultarLinksParaUsuariosComuns() {
     if (user && user.admin !== 0) {
         const linkCadastro = document.getElementById('link-cadastro');
         const linkUsuarios = document.getElementById('link-usuarios');
+        const linkFilmes = document.getElementById('link-filme');
         if (linkCadastro) linkCadastro.style.display = 'none';
         if (linkUsuarios) linkUsuarios.style.display = 'none';
+        if (linkFilmes) linkFilmes.style.display = 'nome';
     }
 }
 

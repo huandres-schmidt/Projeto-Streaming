@@ -45,3 +45,30 @@
 .navbar-gradient {
   background: linear-gradient(to right, #8B0000, #FF0000);
 }
+
+.genero-filmes {
+  margin: 30px;
+}
+
+.col {
+  transition: transform 0.3s;
+}
+
+.col:hover {
+  transform: scale(1.05);
+}
+
+.genero-filmes img {
+  border-radius: 10px;
+}
+
+.genero-filmes {
+  background: linear-gradient(to right, #8B0000, #FF0000);
+
+  background-size: cover;         /* cobre toda a área */
+  background-position: center;    /* centraliza a imagem */
+  background-repeat: no-repeat;   /* não repete */
+  padding: 40px 20px;             /* espaçamento interno */
+  margin: 0px;
+  color: white;                   /* opcional: melhora contraste do texto */
+}

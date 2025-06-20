@@ -22,6 +22,7 @@
             <a class="nav-link" href="../filmes/filmes.html">Filmes</a>
             <a id="link-cadastro" class="nav-link" href="../cadastro_filme/cadastro_filme.html">Cadastrar Filmes</a>
             <a id="link-usuarios" class="nav-link" href="../lista_user/lista_user.html">Lista de Usuários</a>
+            <a id="link-filme" class="nav-link" href="../lista_filme/lista_filme.html">Lista de Filmes</a>
             <a class="nav-link" href="../login/login.html">Finalizar Sessão</a>
         </div>
         </div>
@@ -50,7 +51,27 @@
     </div>
     <section class="filmes-section">
         <h2>Filmes Disponíveis</h2>
-        <div id="lista-filmes" class="filmes-grid"></div>
+        <div id="lista-filmes" class="filmes-grid justify-content-center text-center"></div>
+    </section>
+    <section class="genero-filmes justify-content-center text-center">
+        <h2>Seus Filmes por Genêro</h2>
+        <div class="row g-0 justify-content-center text-center">
+            <div class="col mb-2">
+            <img src="../assets/categorias/teste.png" class="img-fluid" alt="...">
+            </div>
+            <div class="col mb-2">
+            <img src="../assets/categorias/Romance.png" class="img-fluid" alt="...">   
+            </div>
+            <div class="col mb-2">
+               <img src="../assets/categorias/Terror.png" class="img-fluid" alt="...">  
+            </div>
+            <div class="col mb-2">
+              <img src="../assets/categorias/Animação.png" class="img-fluid" alt="...">   
+            </div>
+            <div class="col mb-2">
+               <img src="../assets/categorias/Ação.png" class="img-fluid" alt="...">  
+            </div>
+        </div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/pouchdb@7.3.1/dist/pouchdb.min.js"></script>
     <script src="home.js"></script>
