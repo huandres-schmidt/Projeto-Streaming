@@ -17,11 +17,3 @@ function ocultarLinksParaUsuariosComuns() {
         if (linkFilmes) linkFilmes.style.display = 'nome';
     }
 }
-
-function exibirNomeUsuario() {
-    const user = JSON.parse(localStorage.getItem('usuarioLogado'));
-    if (user) {
-        const nomeEl = document.getElementById('nome-usuario');
-        if (nomeEl) nomeEl.textContent = `Olá, ${user.nome}`;
-    }
-}

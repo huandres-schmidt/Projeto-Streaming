@@ -1,6 +1,6 @@
 const db = new PouchDB('streaming');
 
-// Salvar Filme
+
 async function salvarFilme(filme) {
     try {
         const exist = await db.get(filme._id);
@@ -11,17 +11,15 @@ async function salvarFilme(filme) {
     return db.put(filme);
 }
 
-// Remover Filme
 function removerFilme(id) {
     return db.get(id).then(doc => db.remove(doc));
 }
 
-// Listar Filme
 function listarFilmes() {
     return db.allDocs({ include_docs: true}).then(res => res.rows.map(r => r.doc).filter(doc => doc.type == 'filme'));
 }
 
-// Criar conta usuario
+
 async function criarUsuario(usuario) {
     const id = `usuario::${usuario.email.toLowerCase()}`;
 

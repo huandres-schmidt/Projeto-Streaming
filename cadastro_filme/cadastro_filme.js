@@ -4,14 +4,19 @@ const lista = document.getElementById('lista-filmes');
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const titulo = document.getElementById('titulo').value;
-    const genero = document.getElementById('genero').value;
-    const data = document.getElementById('data').value;
-    const link = document.getElementById('link').value;
-    const tempo = document.getElementById('tempo').value;
-    const thumb = document.getElementById('thumb').value;
-    const stars = document.getElementById('stars').value;
-    const sinopse = document.getElementById('sinopse').value;
+    const titulo = document.getElementById('titulo').value.trim();
+    const genero = document.getElementById('genero').value.trim();
+    const data = document.getElementById('data').value.trim();
+    const link = document.getElementById('link').value.trim();
+    const tempo = document.getElementById('tempo').value.trim();
+    const thumb = document.getElementById('thumb').value.trim();
+    const stars = document.getElementById('stars').value.trim();
+    const sinopse = document.getElementById('sinopse').value.trim();
+
+    if (!titulo || !genero || !data || !link || !tempo || !thumb || !stars || !sinopse) {
+        alert("Por favor, preencha todos os campos antes de salvar.");
+        return;
+    }
 
     const filme = {
         _id: "filme::" + new Date().toISOString(),
@@ -26,28 +31,7 @@ form.addEventListener('submit', async (e) => {
         type: "filme"
     };
 
+
     await salvarFilme(filme);
     form.reset();
 });
-
-async function carregarFilmes() {
-    lista.innerHTML = '';
-    const filmes = await listarFilmes();
-    filmes.forEach(filme => {
-        const li = document.createElement('li');
-        li.innerHTML = `
-            <strong>${filme.titulo}</strong> - ${filme.genero} (${filme.data})
-            <br><a href="${filme.link}" target="_blank">Assistir</a>
-            <br><img src="${filme.thumb}" alt="Thumbnail" width="200">
-            <p>${filme.sinopse}</p>
-            <button onclick="deletarFilme('${filme._id}')">Excluir</button>`;
-    lista.appendChild(li);
-    });
-}
-
-async function deletarFilme(id) {
-  await removerFilme(id);
-  carregarFilmes();
-}
-
-carregarFilmes();

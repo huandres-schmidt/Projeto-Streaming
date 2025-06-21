@@ -16,7 +16,7 @@ document.getElementById("form-login").addEventListener("submit", async function(
                 email: usuario.email,
                 admin: usuario.admin
             }));
-            window.location.href = "../home/home.html";
+            window.location.href = "../pages/home.html";
         } else {
             alert("Senha incorreta.");
         }

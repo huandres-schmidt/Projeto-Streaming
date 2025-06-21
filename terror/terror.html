@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -7,7 +6,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../home/style_home.css">
     <link rel="icon" type="image/png" href="../assets/icon/icon.png">
-    <title>Tela Quente | Filmes</title>
+    <title>Tela Quente | Terror</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-gradient">
@@ -29,18 +28,12 @@
     </div>
     </nav>
     <section class="filmes-section">
-        <div id="lista-filmes" class="container">
-            <div class="row" id="cards-container"></div>
-        </div>
+        <div id="lista-filmes-terror" class="filmes-grid justify-content-center text-center"></div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/pouchdb@7.3.1/dist/pouchdb.min.js"></script>
-    <script src="../home/home.js"></script>
+    <script src="terror.js"></script>
     <script src="../auth.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
-    <script>
-        ocultarLinksParaUsuariosComuns();
-        exibirNomeUsuario();
-    </script>
-</div>
+    <script>ocultarLinksParaUsuariosComuns();</script>
 </body>
 </html>

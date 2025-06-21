@@ -64,11 +64,10 @@
 
 .genero-filmes {
   background: linear-gradient(to right, #8B0000, #FF0000);
-
-  background-size: cover;         /* cobre toda a área */
-  background-position: center;    /* centraliza a imagem */
-  background-repeat: no-repeat;   /* não repete */
-  padding: 40px 20px;             /* espaçamento interno */
+  background-size: cover;        
+  background-position: center; 
+  background-repeat: no-repeat;  
+  padding: 40px 20px;            
   margin: 0px;
-  color: white;                   /* opcional: melhora contraste do texto */
+  color: white;        
 }
