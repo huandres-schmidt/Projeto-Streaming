@@ -1,13 +1,13 @@
 const db = new PouchDB('streaming');
 
-function listarFilmeFiccao() {
-   return db.allDocs({ include_docs: true}).then(res => res.rows.map(r => r.doc).filter(doc => doc.type == 'filme' && doc.genero == 'Ficcao'));
+function listarFilmesGenero(genero) {
+   return db.allDocs({ include_docs: true}).then(res => res.rows.map(r => r.doc).filter(doc => doc.type == 'filme' && doc.genero == genero));
 }
 
-async function exibirFilmes() {
+async function exibirFilmesGenero(genero) {
     const lista = document.getElementById('cards-container');
     lista.innerHTML = ''; 
-    const filmes = await listarFilmeFiccao();
+    const filmes = await listarFilmesGenero(genero);
 
     filmes.forEach(filme => {
     const card = document.createElement('div');
@@ -22,4 +22,6 @@ async function exibirFilmes() {
 
 }
 
-exibirFilmes();
+function abrirDetalhes(id) {
+  window.location.href = `../detalhes_filme/detalhes_filme.html?id=${id}`;
+}
