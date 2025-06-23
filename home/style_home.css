@@ -14,8 +14,8 @@
 
 .filmes-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+  gap: 50px;
 }
 
 .filme-card {
@@ -37,7 +37,7 @@
 }
 
 .card-img-top {
-    width: 100%;
+  width: 100%;
   height: 100%;
   object-fit: cover;
 }
