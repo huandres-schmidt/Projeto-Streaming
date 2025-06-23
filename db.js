@@ -1,6 +1,5 @@
 const db = new PouchDB('streaming');
 
-
 async function salvarFilme(filme) {
     try {
         const exist = await db.get(filme._id);
@@ -44,7 +43,6 @@ async function criarUsuario(usuario) {
     alert("Usuário cadastrado com sucesso!");
 }
 
-// Listar Usuarios
 async function listarUsuarios() {
   try {
     const res = await db.allDocs({ include_docs: true });

@@ -6,13 +6,17 @@
 }
 
 .container-lista {
-    background-color: #484848;
-    width: 100%;
     margin: 30px;
-    border-radius: 15px;
 }
 
 h2 {
     text-align: center;
     color: white;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
 }

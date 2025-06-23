@@ -12,8 +12,8 @@ async function exibirUsuarios() {
         card.style = 'width: 100%';
         card.innerHTML = `
             <div class="row g-0">
-                <div class="col-md-2">
-                    <img src="../assets/logo/logo com fundo.png" class="img-fluid rounded-start" alt="...">
+                <div class="col-md-1">
+                    <img src="../assets/icon/icone_person.png" alt="icone_pessoa">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
