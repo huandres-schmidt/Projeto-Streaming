@@ -16,9 +16,6 @@ async function carregarFilme() {
     card.innerHTML = `
       <div class="card filme-card h-100" onclick="abrirDetalhes('${filme._id}')">
         <img src="${filme.thumb}" class="card-img-top" alt="${filme.titulo}">
-        <div class="card-body text-center">
-          <h5 class="card-title text-truncate">${filme.titulo}</h5>
-        </div>
       </div>
     `;
 

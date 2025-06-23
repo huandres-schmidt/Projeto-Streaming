@@ -5,19 +5,16 @@ function listarFilmeRomance() {
 }
 
 async function exibirFilmes() {
-    const lista = document.getElementById('lista-filmes-romance');
+    const lista = document.getElementById('cards-container');
     lista.innerHTML = ''; 
     const filmes = await listarFilmeRomance();
 
     filmes.forEach(filme => {
     const card = document.createElement('div');
-    card.className = 'filme-card';
-
+    card.className = 'col-md-2 mb-4';
     card.innerHTML = `
-      <img src="${filme.thumb}" alt="${filme.titulo}" class="filme-thumb" />
-      <div class="filme-info">
-        <h4>${filme.titulo}</h4>
-        <p>${filme.genero}</p>
+      <div class="card filme-card h-100" onclick="abrirDetalhes('${filme._id}')">
+        <img src="${filme.thumb}" class="card-img-top" alt="${filme.titulo}">
       </div>
     `;
     lista.appendChild(card);
