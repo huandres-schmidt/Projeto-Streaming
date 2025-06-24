@@ -77,6 +77,7 @@ async function abrirModalEdicao(id) {
   document.getElementById('edit-stars').value = filme.stars;
   document.getElementById('edit-thumb').value = filme.thumb;
   document.getElementById('edit-sinopse').value = filme.sinopse;
+  document.getElementById('edit-link').value = filme.link;
 }
 
 document.getElementById('form-editar').addEventListener('submit', async (e) => {
@@ -94,6 +95,7 @@ document.getElementById('form-editar').addEventListener('submit', async (e) => {
     tempo: document.getElementById('edit-tempo').value,
     stars: document.getElementById('edit-stars').value,
     thumb: document.getElementById('edit-thumb').value,
+    link: document.getElementById('edit-link').value,
     sinopse: document.getElementById('edit-sinopse').value,
     type: "filme"
   };
