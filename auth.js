@@ -14,6 +14,6 @@ function ocultarLinksParaUsuariosComuns() {
         const linkFilmes = document.getElementById('link-filme');
         if (linkCadastro) linkCadastro.style.display = 'none';
         if (linkUsuarios) linkUsuarios.style.display = 'none';
-        if (linkFilmes) linkFilmes.style.display = 'nome';
+        if (linkFilmes) linkFilmes.style.display = 'none';
     }
 }

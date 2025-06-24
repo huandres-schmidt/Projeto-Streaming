@@ -27,7 +27,7 @@ async function criarUsuario(usuario) {
         alert("Usuário já existe com esse e-mail.");
         return;
     } catch (error) {
-        
+
     }
 
     const novoUsuario = {
@@ -36,7 +36,7 @@ async function criarUsuario(usuario) {
         nome: usuario.nome,
         email: usuario.email.toLowerCase(),
         senha: usuario.senha,
-        admin: 1,
+        admin: usuario.admin,
     };
 
     await db.put(novoUsuario);
