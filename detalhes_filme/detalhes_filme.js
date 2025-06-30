@@ -29,6 +29,7 @@ function converterLinkEmbed(link) {
   return link;
 }
 
+
 function getClassificacaoImg(stars) {
   let src = '';
 
