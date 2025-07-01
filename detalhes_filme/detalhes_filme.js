@@ -23,8 +23,8 @@ async function carregarDetalhes() {
 
 function converterLinkEmbed(link) {
   if (link.includes('youtube.com/watch?v=')) {
-    const videoId = link.split('v=')[1].split('&')[0];
-    return `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1`;
+    const linkVideo = link.split('v=')[1].split('&')[0];
+    return `https://www.youtube.com/embed/${linkVideo}?autoplay=1&mute=1`;
   }
   return link;
 }

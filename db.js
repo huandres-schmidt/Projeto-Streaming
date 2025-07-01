@@ -19,28 +19,19 @@ function listarFilmes() {
 }
 
 
-async function criarUsuario(usuario) {
+async function criarUsuario(usuario) {;
     const id = `usuario::${usuario.email.toLowerCase()}`;
 
-    try {
+    try{
         const exist = await db.get(id);
         alert("Usuário já existe com esse e-mail.");
         return;
-    } catch (error) {
+    }catch(e) {
 
     }
 
-    const novoUsuario = {
-        _id: id,
-        type: "usuario",
-        nome: usuario.nome,
-        email: usuario.email.toLowerCase(),
-        senha: usuario.senha,
-        admin: usuario.admin,
-    };
-
-    await db.put(novoUsuario);
     alert("Usuário cadastrado com sucesso!");
+    await db.put(usuario);
 }
 
 async function listarUsuarios() {

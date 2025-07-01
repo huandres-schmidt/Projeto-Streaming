@@ -5,8 +5,6 @@ async function exibirUsuarios() {
     container.innerHTML = ''; 
 
     usuarios.forEach(usuario => {
-        const isAdmin = usuario.admin === 0 ? 'Administrador' : "Usuário Comum";
-
         const card = document.createElement('div');
         card.className = 'card mb-3';
         card.style = 'width: 100%';
@@ -19,7 +17,7 @@ async function exibirUsuarios() {
                     <div class="card-body">
                         <h5 class="card-title">${usuario.nome}</h5>
                         <p class="card-text">${usuario.email}</p>
-                        <p class="card-text"><small class="text-body-secondary">${isAdmin}</small></p>
+                        <p class="card-text"><small class="text-body-secondary">${usuario.admin}</small></p>
                     </div>
                 </div>
             </div>

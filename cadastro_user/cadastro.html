@@ -1,27 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <link rel="stylesheet" href="cadastro_user_style.css">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="icon" type="image/png" href="../assets/icon/icon.png">
     <title>Tela Quente | Cadastra-se</title>
 </head>
 <body>
-    <div class="container-cadastro-user">
-      <img src="../assets/LogoTelaQuente.png" class="logo">
-      <form id="form-cadastro">
-        <input type="text" id="nome-user" placeholder="Nome de Usuário">
-        <input type="email" id="email-user" placeholder="Email do Usuário">
-        <input type="password" id="password-user" placeholder="Senha de Usuário">
-        <button id="btn-cadastro-user" type="submit">Cadastrar-se</button>
-        <a href="../index.html">Voltar para tela de login</a>
+    <nav class="navbar navbar-expand-lg navbar-gradient">
+    <div class="container-fluid">
+        <img src="../assets/logo/logo.png" class="logo">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-link" href="../home/home.html">Início</a>
+            <a class="nav-link" href="../filmes/filmes.html">Filmes</a>
+            <a id="link-cadastro" class="nav-link" href="../cadastro_filme/cadastro_filme.html">Cadastrar Filmes</a>
+            <a id="link-cadastro-user" class="nav-link" href="../cadastro_user/cadastro.html">Cadastrar Usuários</a>
+            <a id="link-usuarios" class="nav-link" href="../lista_user/lista_user.html">Lista de Usuários</a>
+            <a id="link-filme" class="nav-link" href="../lista_filme/lista_filme.html">Lista de Filmes</a>
+            <a class="nav-link" href="../index.html">Finalizar Sessão</a>
+        </div>
+        </div>
+    </div>
+    </nav>
+    <div class="img-logo">
+      <img src="../assets/LogoTelaQuente.png" alt="logo-tela-quente" style="width: 17%;">
+    </div>
+    <div class="form-wrapper">
+      <form class="form" id="form-cadastro">
+        <div class="col mb-3">
+          <input type="text" id="nome-user" placeholder="Nome de Usuário" class="form-control">
+        </div>
+        <div class="col mb-3">
+          <input type="email" id="email-user" placeholder="Email do Usuário" class="form-control">
+        </div>
+        <div class="col mb-3">
+          <input type="password" id="password-user" placeholder="Senha de Usuário" class="form-control">
+        </div>
+        <div class="col mb-3">
+          <select id="admin" class="form-select" aria-label="Default select example" class="form-control">
+            <option selected>Tipo de Usuário</option>
+            <option value="Administrador">Administrador</option>
+            <option value="Comum">Comum</option>
+          </select>
+        </div>
+          <div class="buttons">
+            <button class="cancel" type="reset">Cancelar</button>
+            <button class="save" type="submit">Salvar</button>
+          </div>
       </form>
-   </div>
+    </div>
+      
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
    <script src="https://cdn.jsdelivr.net/npm/pouchdb@7.3.1/dist/pouchdb.min.js"></script>
-   <script src="../db.js"></script>
-   <script src="../login/login.js"></script>
    <script src="cadastro_user.js"></script>
+   <script src="../db.js"></script>
+   <script src="../auth.js"></script>
 </body>
 </html>

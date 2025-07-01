@@ -6,30 +6,15 @@ form.addEventListener('submit', async (e) => {
     const nomeUser = document.getElementById('nome-user').value;
     const emailUser = document.getElementById('email-user').value;
     const passwordUser = document.getElementById('password-user').value;
+    const admin = document.getElementById('admin').value;
 
-    const listUsers = await listarUsuarios();
-    let usuario;
-
-    console.log(`List: ${listUsers}`);
-
-    if (listUsers.length == 0) {
-        usuario = {
-            id: emailUser.toLowerCase(),
-            type: "usuario",
-            nome: nomeUser,
-            email: emailUser.toLowerCase(),
-            senha: passwordUser,
-            admin: 0,
-        }
-    } else {
-        usuario = {
-            id: emailUser.toLowerCase(),
-            type: "usuario",
-            nome: nomeUser,
-            email: emailUser.toLowerCase(),
-            senha: passwordUser,
-            admin: 1,
-        }
+    const usuario = {
+        _id: emailUser.toLowerCase(),
+        type: "usuario",
+        nome: nomeUser,
+        email: emailUser.toLowerCase(),
+        senha: passwordUser,
+        admin: admin,
     }
 
     await criarUsuario(usuario);
