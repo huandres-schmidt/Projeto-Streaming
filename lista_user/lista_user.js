@@ -18,6 +18,8 @@ async function exibirUsuarios() {
                         <h5 class="card-title">${usuario.nome}</h5>
                         <p class="card-text">${usuario.email}</p>
                         <p class="card-text"><small class="text-body-secondary">${usuario.admin}</small></p>
+                        <button class="btn btn-danger" onclick="deletarUsuario('${usuario._id}')">Excluir</button>
+                        <button onclick="abrirModalEdicaoUser('${usuario._id}')" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-editar-usuario">Editar</button>
                     </div>
                 </div>
             </div>
@@ -26,5 +28,44 @@ async function exibirUsuarios() {
         container.appendChild(card);
     });
 }
+
+async function deletarUsuario(id) {
+    await removerUsuario(id);
+    exibirUsuarios();
+}
+
+async function abrirModalEdicaoUser(id) {
+    const usuario = await db.get(id);
+
+    document.getElementById('edit-id-usuario').value = usuario._id;
+    document.getElementById('edit-nome').value = usuario.nome;
+    document.getElementById('edit-email').value = usuario.email;
+    document.getElementById('edit-admin').value = usuario.admin;
+    document.getElementById('edit-senha').value = usuario.senha;
+}
+
+document.getElementById('form-editar').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  
+  const id = document.getElementById('edit-id-usuario').value;
+  const usuario = await db.get(id);
+
+  const usuarioAtualizado = {
+    _id: usuario._id,
+    _rev: usuario._rev,
+    type: "usuario",
+    nome:  document.getElementById('edit-nome').value,
+    email: document.getElementById('edit-email').value,
+    senha: document.getElementById('edit-senha').value,
+    admin: document.getElementById('edit-admin').value,
+  };
+
+  await db.put(usuarioAtualizado);
+  exibirUsuarios();
+
+  const modalEl = document.getElementById('modal-editar-usuario');
+  const modal = bootstrap.Modal.getInstance(modalEl) || new bootstrap.Modal(modalEl);
+  modal.hide();
+});
 
 exibirUsuarios();

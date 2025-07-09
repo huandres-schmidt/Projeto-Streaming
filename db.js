@@ -44,3 +44,7 @@ async function listarUsuarios() {
     return [];
   }
 }
+
+function removerUsuario(id) {
+  return db.get(id).then(doc => db.remove(doc));
+}
