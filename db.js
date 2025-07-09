@@ -6,7 +6,6 @@ async function salvarFilme(filme) {
     }catch (e) {
 
     }
-    alert('Novo filme cadastrado!');
     return db.put(filme);
 }
 
@@ -30,7 +29,6 @@ async function criarUsuario(usuario) {;
 
     }
 
-    alert("Usuário cadastrado com sucesso!");
     await db.put(usuario);
 }
 

@@ -106,6 +106,7 @@ document.getElementById('form-editar').addEventListener('submit', async (e) => {
   const modalEl = document.getElementById('modal-editar-filme');
   const modal = bootstrap.Modal.getInstance(modalEl) || new bootstrap.Modal(modalEl);
   modal.hide();
+  alert(`Filme atualizado com sucesso!!`);
 });
 
 exibirFilmes();

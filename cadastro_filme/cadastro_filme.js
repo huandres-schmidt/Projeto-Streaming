@@ -33,5 +33,6 @@ form.addEventListener('submit', async (e) => {
 
 
     await salvarFilme(filme);
+    alert(`Novo filme adicionado com sucesso!!`);
     form.reset();
 });

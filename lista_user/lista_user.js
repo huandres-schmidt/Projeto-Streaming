@@ -66,6 +66,7 @@ document.getElementById('form-editar').addEventListener('submit', async (e) => {
   const modalEl = document.getElementById('modal-editar-usuario');
   const modal = bootstrap.Modal.getInstance(modalEl) || new bootstrap.Modal(modalEl);
   modal.hide();
+  alert(`Usuário atualizado com sucesso!!`);
 });
 
 exibirUsuarios();

@@ -8,6 +8,11 @@ form.addEventListener('submit', async (e) => {
     const passwordUser = document.getElementById('password-user').value;
     const admin = document.getElementById('admin').value;
 
+    if (!nomeUser || !emailUser || !passwordUser || !admin) {
+        alert(`Por favor, preencha todos os campos antes de salvar.`);
+        return;
+    }
+
     const usuario = {
         _id: emailUser.toLowerCase(),
         type: "usuario",
@@ -18,5 +23,6 @@ form.addEventListener('submit', async (e) => {
     }
 
     await criarUsuario(usuario);
+    alert(`Novo usuário adicionado com sucesso!!`);
     form.reset();
 })
