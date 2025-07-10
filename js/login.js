@@ -13,7 +13,7 @@ async function inicializarBanco() {
         console.log('Usuário já existe. Nada será feito.');
     } catch (err) {
         if (err.status === 404) {
-        await db.put(usuarioInicial);
+        await criarUsuario(usuarioInicial);
         console.log('Usuário padrão criado.');
         } else {
         console.log('Usuário já existe.');

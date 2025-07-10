@@ -14,7 +14,7 @@ form.addEventListener('submit', async (e) => {
     }
 
     const usuario = {
-        _id: emailUser.toLowerCase(),
+        _id: `usuario::${emailUser.toLowerCase()}`,
         type: "usuario",
         nome: nomeUser,
         email: emailUser.toLowerCase(),
@@ -23,6 +23,5 @@ form.addEventListener('submit', async (e) => {
     }
 
     await criarUsuario(usuario);
-    alert(`Novo usuário adicionado com sucesso!!`);
     form.reset();
 })

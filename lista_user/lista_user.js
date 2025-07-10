@@ -39,18 +39,22 @@ async function deletarUsuario(id) {
 }
 
 async function abrirModalEdicaoUser(id) {
-    const usuario = await db.get(id);
-
     if(id === "usuario::admin@admin.com") {
         alert(`Não é possivel editar usuário admin principal.`);
         return;
     }
+    
+    const usuario = await db.get(id);
 
     document.getElementById('edit-id-usuario').value = usuario._id;
     document.getElementById('edit-nome').value = usuario.nome;
     document.getElementById('edit-email').value = usuario.email;
     document.getElementById('edit-admin').value = usuario.admin;
     document.getElementById('edit-senha').value = usuario.senha;
+    
+    const modalEl = document.getElementById('modal-editar-usuario');
+    const modal = bootstrap.Modal.getOrCreateInstance(modalEl);
+    modal.show();
 }
 
 document.getElementById('form-editar').addEventListener('submit', async (e) => {

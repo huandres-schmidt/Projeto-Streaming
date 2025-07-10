@@ -8,6 +8,6 @@ function ocultarLinksParaUsuariosComuns() {
         if (linkCadastro) linkCadastro.style.display = 'none';
         if (linkUsuarios) linkUsuarios.style.display = 'none';
         if (linkFilmes) linkFilmes.style.display = 'none';
-        if (linkUser) linkUser.style.display = 'nome';
+        if (linkUser) linkUser.style.display = 'none';
     }
 }
