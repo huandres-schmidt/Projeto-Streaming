@@ -1,11 +1,7 @@
 const db = new PouchDB('streaming');
 
+//Filmes
 async function salvarFilme(filme) {
-    try {
-        const exist = await db.get(filme._id);
-    }catch (e) {
-
-    }
     return db.put(filme);
 }
 
@@ -17,6 +13,7 @@ function listarFilmes() {
     return db.allDocs({ include_docs: true}).then(res => res.rows.map(r => r.doc).filter(doc => doc.type == 'filme'));
 }
 
+//Usuario
 
 async function criarUsuario(usuario) {
     const id = `usuario::${usuario.email.toLowerCase()}`;
@@ -46,6 +43,7 @@ async function listarUsuarios() {
 function removerUsuario(id) {
   return db.get(id).then(doc => db.remove(doc));
 }
+
 
 async function addFilmesIniciais() {
   const filme1 = {
@@ -145,9 +143,9 @@ async function addFilmesIniciais() {
         titulo: "Como Eu Era Antes de Você",
         genero: "Romance",
         data: "2016",
-        link: "https://br.web.img2.acsta.net/pictures/16/02/03/19/11/303307.jpg",
+        link: "https://www.youtube.com/watch?v=PnqUs3xiAVI&pp=0gcJCfwAo7VqN5tD",
         tempo: "1h 50m",
-        thumb: "https://www.youtube.com/watch?v=PnqUs3xiAVI&pp=0gcJCfwAo7VqN5tD",
+        thumb: "https://br.web.img2.acsta.net/pictures/16/02/03/19/11/303307.jpg",
         stars: "12",
         sinopse: "De origem modesta e sem grandes aspirações, a peculiar Louisa Clark é contratada para ser cuidadora de Will, um jovem tetraplégico depressivo e cínico.",
         type: "filme"
