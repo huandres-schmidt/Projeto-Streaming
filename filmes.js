@@ -19,7 +19,6 @@ async function exibirFilmesGenero(genero) {
     `;
     lista.appendChild(card);
   });
-
 }
 
 function abrirDetalhes(id) {

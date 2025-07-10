@@ -1,3 +1,26 @@
+async function inicializarBanco() {
+    const usuarioInicial = {
+        _id: 'usuario::admin@admin.com',
+        admin: 'Administrador',
+        nome: 'Administrador',
+        email: 'admin@admin.com',
+        senha: 'admin123',
+        type: 'usuario',
+    };
+
+    try {
+        await db.get(usuarioInicial._id);
+        console.log('Usuário já existe. Nada será feito.');
+    } catch (err) {
+        if (err.status === 404) {
+        await db.put(usuarioInicial);
+        console.log('Usuário padrão criado.');
+        } else {
+        console.log('Usuário já existe.');
+        }   
+    }
+}
+
 document.getElementById("form-login").addEventListener("submit", async function(event) {
     event.preventDefault();
 
@@ -24,4 +47,3 @@ document.getElementById("form-login").addEventListener("submit", async function(
         alert("Usuário não encontrado.");
     }
 });
-

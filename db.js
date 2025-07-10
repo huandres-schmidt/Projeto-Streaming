@@ -28,7 +28,7 @@ async function criarUsuario(usuario) {;
     }catch(e) {
 
     }
-
+    alert("Usuario cadastrado.");
     await db.put(usuario);
 }
 

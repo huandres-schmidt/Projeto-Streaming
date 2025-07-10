@@ -19,7 +19,7 @@ async function exibirUsuarios() {
                         <p class="card-text">${usuario.email}</p>
                         <p class="card-text"><small class="text-body-secondary">${usuario.admin}</small></p>
                         <button class="btn btn-danger" onclick="deletarUsuario('${usuario._id}')">Excluir</button>
-                        <button onclick="abrirModalEdicaoUser('${usuario._id}')" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-editar-usuario">Editar</button>
+                        <button onclick="abrirModalEdicaoUser('${usuario._id}')" class="btn btn-primary">Editar</button>
                     </div>
                 </div>
             </div>
@@ -30,12 +30,21 @@ async function exibirUsuarios() {
 }
 
 async function deletarUsuario(id) {
+    if(id === "usuario::admin@admin.com") {
+        alert(`Não é possivel excluir usuário admin principal.`);
+        return;
+    }
     await removerUsuario(id);
     exibirUsuarios();
 }
 
 async function abrirModalEdicaoUser(id) {
     const usuario = await db.get(id);
+
+    if(id === "usuario::admin@admin.com") {
+        alert(`Não é possivel editar usuário admin principal.`);
+        return;
+    }
 
     document.getElementById('edit-id-usuario').value = usuario._id;
     document.getElementById('edit-nome').value = usuario.nome;
