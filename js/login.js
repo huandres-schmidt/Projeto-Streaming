@@ -7,13 +7,14 @@ async function inicializarBanco() {
         senha: 'admin123',
         type: 'usuario',
     };
-
+    
     try {
         await db.get(usuarioInicial._id);
         console.log('Usuário já existe. Nada será feito.');
     } catch (err) {
         if (err.status === 404) {
         await criarUsuario(usuarioInicial);
+        await addFilmesIniciais();
         console.log('Usuário padrão criado.');
         } else {
         console.log('Usuário já existe.');
